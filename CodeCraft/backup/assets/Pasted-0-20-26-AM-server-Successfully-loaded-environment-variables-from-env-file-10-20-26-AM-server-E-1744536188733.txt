@@ -1,0 +1,66 @@
+0:20:26 AM [server] Successfully loaded environment variables from .env file
+10:20:26 AM [server] Environment variables after loading:
+10:20:26 AM [server] USE_MONGODB = true
+10:20:26 AM [server] USE_MONGODB_MEMORY_SERVER = true
+10:20:26 AM [server] USE_MEMORY_DB = false
+10:20:26 AM [server] USE_POSTGRES = false
+10:20:26 AM [server] MONGODB_URI = [REDACTED]
+10:20:26 AM [storage] Environment settings - USE_MONGODB: true, USE_MONGODB_MEMORY_SERVER: true, USE_MEMORY_DB: false
+10:20:26 AM [storage] Attempting to use MongoDB storage implementation with Memory Server
+10:20:26 AM [storage] Attempting to import MongoStorage module...
+10:20:27 AM [storage] Successfully imported MongoStorage module, initializing...
+10:20:27 AM [storage] Successfully initialized MongoDB storage
+10:20:27 AM [seed] Checking if database needs to be seeded...
+10:20:29 AM [mongodb] Created new MongoDB Memory Server: mongodb://127.0.0.1:50592/
+10:20:29 AM [mongodb] Attempting to connect to MongoDB at URI: mongodb://127.0.0.1:50592/
+10:20:29 AM [mongodb] MongoDB connection established
+10:20:29 AM [mongodb] Successfully connected to MongoDB
+10:20:29 AM [mongodb] MongoDB version: 7.0.14
+10:20:29 AM [mongodb] Database: test, Collections: 1
+10:20:29 AM [seed] Created default admin user (username: admin, password: admin123)
+10:20:29 AM [seed] Created test user (username: testuser, password: test123)
+10:20:29 AM [seed] Database seeded successfully
+10:20:29 AM [server] Using MongoDB Memory Server (for development) for data persistence
+10:20:29 AM [storage] Environment settings - USE_MONGODB: true, USE_MONGODB_MEMORY_SERVER: true, USE_MEMORY_DB: false
+10:20:29 AM [storage] Attempting to use MongoDB storage implementation with Memory Server
+10:20:29 AM [storage] Reusing existing MongoDB storage instance
+10:20:29 AM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10:21:17 AM [express] GET /api/auth/me 401 in 14ms
+10:21:17 AM [express] GET /api/services 304 in 54ms :: []
+10:21:17 AM [express] GET /api/jobs 304 in 50ms :: []
+Login request received: { username: 'amin', password: '123456789' }
+Attempting login for username: amin
+Authenticating user: amin
+Normalized username for auth: amin
+10:21:29 AM [storage] Looking for user with normalized username: amin
+10:21:29 AM [storage] User not found with username: amin
+User found in database: No
+User not found: amin
+Login failed: User not found
+10:21:29 AM [express] POST /api/auth/login 401 in 36ms :: {"message":"Invalid username or password","…
+10:21:50 AM [storage] Looking for user with normalized username: dali
+10:21:50 AM [storage] User not found with username: dali
+Hashing password for new user registration
+Password hashed successfully, hash length: 60
+New user created: dali, password hash available: No
+WARNING: Password not saved properly in user object
+Serializing user: dali, ID: 67fb822e9856efeb2c40d2d3
+10:21:50 AM [express] POST /api/auth/register 201 in 134ms :: {"username":"dali","email":"dali@gmail.…
+Deserializing user with ID: 67fb822e9856efeb2c40d2d3, type: string
+Successfully deserialized user: dali
+Deserializing user with ID: 67fb822e9856efeb2c40d2d3, type: string
+Successfully deserialized user: dali
+10:21:55 AM [express] POST /api/auth/logout 200 in 15ms :: {"message":"Logged out successfully"}
+Login request received: { username: 'dali', password: '123456789' }
+Attempting login for username: dali
+Authenticating user: dali
+Normalized username for auth: dali
+10:22:04 AM [storage] Looking for user with normalized username: dali
+10:22:04 AM [storage] Found user: dali (ID: 67fb822e9856efeb2c40d2d3)
+User found in database: Yes ID: 67fb822e9856efeb2c40d2d3, Type: string
+User has no password: dali
+Login failed: User has no password
+10:22:04 AM [express] POST /api/auth/login 401 in 32ms :: {"message":"Invalid username or password","…

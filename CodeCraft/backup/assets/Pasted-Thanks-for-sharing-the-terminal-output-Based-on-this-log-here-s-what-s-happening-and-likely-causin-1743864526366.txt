@@ -1,0 +1,68 @@
+Thanks for sharing the terminal output! Based on this log, here's what's happening and likely causing your login issue:
+
+---
+
+### 🔍 **Main Problem**
+The key error is this:
+```
+[storage] Error getting user by username: Cannot read properties of undefined (reading 'toString')
+Login failed: Invalid username or password
+```
+
+This means that **when your login function tries to access a property (probably `_id.toString()` or `password.toString()`), the user object is `undefined`** — which means no user was found in the database for the provided username.
+
+---
+
+### 💥 **Why it works on register but not on login**
+
+- When you register, everything goes fine — the user is saved to MongoDB.
+- But when you try to **log in again**, the code that tries to fetch the user from the database is **not finding the user** — so `user` becomes `undefined`, and calling `.toString()` on it throws an error.
+
+---
+
+### 🧠 Possible Causes
+
+1. **Case sensitivity or typo in the login form:**
+   - Maybe you're registering with `"Qqqq"` but trying to log in with `"qqqq"`.
+   - MongoDB is **case-sensitive** by default, so `"Qqqq"` ≠ `"qqqq"`.
+
+2. **Your `findOne()` query might be incorrect:**
+   ```js
+   const user = await User.findOne({ username });
+   ```
+   - If `username` is empty or has spaces or is not trimmed, it won’t match.
+   - Log the `username` just before this query to confirm.
+
+3. **Your `User` schema might have unique constraints or different field names:**
+   - For example, you might be saving the username as `userName` during register but querying `username` during login.
+
+4. **Corrupted or invalid data in the DB:**
+   - If the saved document is malformed or missing fields (`username`, `password`), the query could return `undefined`.
+
+---
+
+### ✅ Suggested Fixes
+
+1. **Sanitize input on login:**
+   ```js
+   const username = req.body.username?.trim().toLowerCase();
+   ```
+
+2. **Add a check before calling `.toString()`**
+   ```js
+   if (!user) {
+     console.log("User not found with username:", username);
+     return res.status(401).json({ message: "Invalid username or password" });
+   }
+   ```
+
+3. **Log the actual data being saved and queried:**
+   - In your register function: `console.log("Registered user:", newUser);`
+   - In your login function: `console.log("Looking for user:", username);`
+
+---
+
+### ❓Want me to check your register/login code?
+If you share your `/api/auth/register` and `/api/auth/login` code files or snippets, I can help spot the bug directly.
+
+Let me know!

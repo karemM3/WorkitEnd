@@ -1,0 +1,35 @@
+2:42:25 PM [server] Successfully loaded environment variables from .env file
+2:42:25 PM [server] Environment variables after loading:
+2:42:25 PM [server] USE_MONGODB = true
+2:42:25 PM [server] USE_MONGODB_MEMORY_SERVER = false
+2:42:25 PM [server] USE_MEMORY_DB = false
+2:42:25 PM [server] USE_POSTGRES = false
+2:42:25 PM [server] MONGODB_URI = [REDACTED]
+2:42:25 PM [server] Starting MongoDB server...
+2:42:26 PM [mongodb] MongoDB server is already running
+2:42:26 PM [server] MongoDB server started successfully
+2:42:26 PM [storage] Environment settings - USE_MONGODB: true, USE_MONGODB_MEMORY_SERVER: false, USE_MEMORY_DB: false
+2:42:26 PM [storage] Attempting to use MongoDB storage implementation with real MongoDB
+2:42:26 PM [storage] Attempting to import MongoStorage module...
+2:42:26 PM [storage] Successfully imported MongoStorage module, initializing...
+2:42:26 PM [storage] Successfully initialized MongoDB storage
+2:42:26 PM [server] Using MongoDB database (persistent) for data persistence
+2:42:26 PM [storage] Environment settings - USE_MONGODB: true, USE_MONGODB_MEMORY_SERVER: false, USE_MEMORY_DB: false
+2:42:26 PM [storage] Attempting to use MongoDB storage implementation with real MongoDB
+2:42:26 PM [storage] Reusing existing MongoDB storage instance
+2:42:26 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2:42:39 PM [mongodb] Attempting to connect to MongoDB at URI: mongodb://localhost:27017/workit
+2:42:39 PM [mongodb] Connection in progress, waiting...
+2:42:39 PM [express] GET /api/auth/me 401 in 8ms
+2:42:40 PM [mongodb] MongoDB connection established
+2:42:40 PM [mongodb] Successfully connected to MongoDB
+2:42:40 PM [mongodb] MongoDB version: 8.0.5
+2:42:40 PM [mongodb] Database: workit, Collections: 16
+2:42:40 PM [express] GET /api/jobs 304 in 223ms :: [{"userId":"67f11a2b29459e7b710fe3dc","title":"ff…
+2:42:40 PM [express] GET /api/services 304 in 269ms :: [{"userId":"67f119a229459e7b710fe3a9","title"…
+2:42:48 PM [storage] Error getting user by username: Cannot read properties of undefined (reading 'toString')
+Login failed: Invalid username or password
+2:42:48 PM [express] POST /api/auth/login 401 in 10ms :: {"message":"Invalid username or password"}

@@ -1,0 +1,60 @@
+uthentication successful for user: riheb
+Serializing user: riheb, ID: 67fb8ae50f68a79511aee535
+User logged in successfully: riheb
+User object being returned: {"id":"67fb8ae50f68a79511aee535","username":"riheb","email":"riheb@gmail.com","fullName":"riheb","role":"freelancer","profilePicture":"/uploads/profiles/446283dd-2d4b-4ac6-8d85-aaa629159fa8.jpeg","bio":"","skills":[],"location":"","createdAt":"2025-04-13T09:59:01.924Z"}
+11:45:35 AM [express] POST /api/auth/login 200 in 79ms :: {"id":"67fb8ae50f68a79511aee535","username"…
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Successfully deserialized user: riheb
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Successfully deserialized user: riheb
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Successfully deserialized user: riheb
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Successfully deserialized user: riheb
+Successfully deserialized user: riheb
+Successfully deserialized user: riheb
+Successfully deserialized user: riheb
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Successfully deserialized user: riheb
+Deserializing user with ID: 67fb8ae50f68a79511aee535, type: string
+Successfully deserialized user: riheb
+Error creating application: ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "number",
+    "received": "string",
+    "path": [
+      "jobId"
+    ],
+    "message": "Expected number, received string"
+  }
+]
+    at get error (file:///D:/replit.com/VIP%2029/CodeCraft/node_modules/zod/lib/index.mjs:587:31)
+    at ZodObject.parse (file:///D:/replit.com/VIP%2029/CodeCraft/node_modules/zod/lib/index.mjs:692:22)
+    at <anonymous> (D:\replit.com\VIP 29\CodeCraft\server\routes.ts:612:55)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  issues: [
+    {
+      code: 'invalid_type',
+      expected: 'number',
+      received: 'string',
+      path: [Array],
+      message: 'Expected number, received string'
+    }
+  ],
+  addIssue: [Function (anonymous)],
+  addIssues: [Function (anonymous)],
+  errors: [
+    {
+      code: 'invalid_type',
+      expected: 'number',
+      received: 'string',
+      path: [Array],
+      message: 'Expected number, received string'
+    }
+  ]
+}
+11:45:49 AM [express] POST /api/jobs/67fb957f819be74e3871c1fc/applications 400 in 17ms :: {"message":…

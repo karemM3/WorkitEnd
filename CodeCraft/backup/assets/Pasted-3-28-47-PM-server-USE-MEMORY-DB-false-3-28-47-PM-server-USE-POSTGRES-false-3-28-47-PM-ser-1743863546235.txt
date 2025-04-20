@@ -1,0 +1,57 @@
+3:28:47 PM [server] USE_MEMORY_DB = false
+3:28:47 PM [server] USE_POSTGRES = false
+3:28:47 PM [server] MONGODB_URI = [REDACTED]
+3:28:47 PM [server] Starting MongoDB server...
+3:28:48 PM [mongodb] MongoDB server is already running
+3:28:48 PM [server] MongoDB server started successfully
+3:28:48 PM [storage] Environment settings - USE_MONGODB: true, USE_MONGODB_MEMORY_SERVER: false, USE_MEMORY_DB: false
+3:28:48 PM [storage] Attempting to use MongoDB storage implementation with real MongoDB
+3:28:48 PM [storage] Attempting to import MongoStorage module...
+3:28:48 PM [storage] Successfully imported MongoStorage module, initializing...
+3:28:48 PM [storage] Successfully initialized MongoDB storage
+3:28:48 PM [server] Using MongoDB database (persistent) for data persistence
+3:28:48 PM [storage] Environment settings - USE_MONGODB: true, USE_MONGODB_MEMORY_SERVER: false, USE_MEMORY_DB: false
+3:28:48 PM [storage] Attempting to use MongoDB storage implementation with real MongoDB
+3:28:48 PM [storage] Reusing existing MongoDB storage instance
+3:28:48 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+3:29:00 PM [mongodb] Attempting to connect to MongoDB at URI: mongodb://localhost:27017/workit
+3:29:00 PM [mongodb] Connection in progress, waiting...
+3:29:00 PM [express] GET /api/auth/me 401 in 10ms
+3:29:00 PM [mongodb] MongoDB connection established
+3:29:00 PM [mongodb] Successfully connected to MongoDB
+3:29:00 PM [mongodb] MongoDB version: 8.0.5
+3:29:00 PM [mongodb] Database: workit, Collections: 16
+3:29:00 PM [express] GET /api/jobs 200 in 161ms :: []
+3:29:00 PM [express] GET /api/services 200 in 200ms :: []
+3:29:20 PM [storage] User not found with username: oussama
+3:29:20 PM [express] POST /api/auth/register 201 in 102ms :: {"username":"oussama","email":"oussama@…
+Profile picture uploaded: /uploads/profiles/ba999e59-c695-4de7-b796-a1fa3abce0db.jpeg
+Updating user with data: {
+  bio: '',
+  profilePicture: '/uploads/profiles/ba999e59-c695-4de7-b796-a1fa3abce0db.jpeg'
+}
+3:29:31 PM [storage] Attempting to update user with MongoDB ObjectId: 67f13e40b8a68663569ea70e
+3:29:31 PM [express] PUT /api/users/67f13e40b8a68663569ea70e 200 in 76ms :: {"username":"oussama","e…
+Profile picture uploaded: /uploads/profiles/9609cd1f-573b-4411-9f82-295d40683657.jpeg
+Updating user with data: {
+  bio: '',
+  profilePicture: '/uploads/profiles/9609cd1f-573b-4411-9f82-295d40683657.jpeg'
+}
+3:29:37 PM [storage] Attempting to update user with MongoDB ObjectId: 67f13e40b8a68663569ea70e
+3:29:37 PM [express] PUT /api/users/67f13e40b8a68663569ea70e 200 in 16ms :: {"username":"oussama","e…
+3:29:52 PM [express] GET /api/users/67f13e40b8a68663569ea70e/applications 403 in 17ms :: {"message":…
+3:29:52 PM [express] GET /api/users/67f13e40b8a68663569ea70e/services 200 in 22ms :: []
+3:29:52 PM [express] GET /api/users/67f13e40b8a68663569ea70e/orders 403 in 18ms :: {"message":"You c…
+Service creation request received {
+  bodyKeys: [ 'title', 'description', 'price', 'category', 'deliveryTime' ],
+  hasFiles: true
+}
+Service image uploaded: /uploads/services/a1c0cf70-1626-48c0-99ac-01c9980e33f6.jpeg
+3:30:12 PM [express] POST /api/services 201 in 16ms :: {"userId":"67f13e40b8a68663569ea70e","title":…
+3:31:13 PM [express] POST /api/auth/logout 200 in 6ms :: {"message":"Logged out successfully"}
+3:31:20 PM [storage] Error getting user by username: Cannot read properties of undefined (reading 'toString')
+Login failed: Invalid username or password
+3:31:20 PM [express] POST /api/auth/login 401 in 7ms :: {"message":"Invalid username or password"}
